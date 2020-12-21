@@ -17,7 +17,8 @@ public DriverWait(WebDriver driver)
 		this.driver=driver;
 		log =new Logs(driver);
 	}
-//webdriverwait for element to be clickable
+
+//Webdriver Wait for element to be clickable
 public WebElement clickable(By locator,int timeout)
 	{
 	try 
@@ -37,7 +38,7 @@ public WebElement clickable(By locator,int timeout)
 	}
 		return webElement;
 	}
-//webdriverwait for text to be visible 
+//WebdriverWait for text to be visible 
 public WebElement visibility(By locator,int timeout) 
 	{
 	try 

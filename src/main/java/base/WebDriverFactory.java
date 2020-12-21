@@ -27,6 +27,9 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+//import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
+
 import base.Logs;
 
 
@@ -100,6 +103,7 @@ public class WebDriverFactory {
          case "AWS_DEVICEFARM_FIREFOX":
              testGridUrl = getTestGridUrl();
              driver = new RemoteWebDriver(testGridUrl, DesiredCapabilities.firefox());
+             ExtentCucumberAdapter.addTestStepLog(strExecutionPlatform + " Driver Creation Completed");
            
              break;
          case "AWS_FARGATE":
@@ -107,8 +111,11 @@ public class WebDriverFactory {
              ChromeOptions chromeOpt = new ChromeOptions();
              chromeCapabilities.setCapability(ChromeOptions.CAPABILITY, chromeOpt);
              driver = new RemoteWebDriver(new URL("http://3.19.74.252:4444/wd/hub"), chromeCapabilities);
+             ExtentCucumberAdapter.addTestStepLog(strExecutionPlatform + " Driver Creation Completed");
              
              break;
+         default:
+             ExtentCucumberAdapter.addTestStepLog("ExecutionPlatform Platform must be set in settings file.");
          
      }
 	

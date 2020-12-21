@@ -11,6 +11,7 @@ public Logs(WebDriver driver)
 		this.driver =driver;
 		Log = Logger.getLogger("devpinoyLogger");
 	}
+
 //function to update a log message
 public void update(String message)
 	{
