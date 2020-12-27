@@ -19,9 +19,9 @@ public class LoginPage {
 //	RandomStringGenerator randomEmailGenerator;
 	String[][] test1=new String[1][1];
 	
-	By userName=By.id("username");
-	By password=By.xpath("//td[text()='Log In']//following::input[2]");
-	By login=By.xpath("//td[text()='Log In']//following::input[3]");
+	By userName=By.id("ctl00_MainContent_username");
+	By password=By.id("ctl00_MainContent_password");
+	By login=By.name("ctl00$MainContent$login_button");
 	
 public LoginPage(WebDriver driver) throws TimeoutException
 	{
@@ -36,8 +36,8 @@ public void enterUserName()
 			test1=excel.read();
 			String userName1=test1[0][1];
 			
-			WebElement a=driverWait.visibility(userName,20);         
-			a.sendKeys(userName1);
+			WebElement usrname=driverWait.visibility(userName,20);         
+			usrname.sendKeys(userName1);
 			
 			System.out.println("UserName is entered");
 			log.update("******UserName is entered*****");
@@ -48,8 +48,8 @@ public void enterPassword()
 			test1=excel.read();
 			String password1=test1[0][1];
 			
-			WebElement a=driverWait.visibility(password,20);         
-			a.sendKeys(password1);
+			WebElement pswd=driverWait.visibility(password,20);         
+			pswd.sendKeys(password1);
 			
 			System.out.println("Password is entered");
 			log.update("******Password is entered*****");
@@ -57,8 +57,8 @@ public void enterPassword()
 //Clicking on login button
 public void clickOnLoginButton()        
 	{
-			WebElement a=driverWait.visibility(login,20);         
-			a.click();
+			WebElement lgin=driverWait.visibility(login,20);         
+			lgin.click();
 			
 			System.out.println("Login is clicked");
 			log.update("******Login is clicked*****");

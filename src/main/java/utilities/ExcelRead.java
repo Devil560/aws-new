@@ -22,7 +22,7 @@ public class ExcelRead {
 //method to read data from excel
 public String[][] read()
 	{
-		File f=new File("testdata/qualitytech.xlsx");
+		File f=new File("testdata/smartbear.xlsx");
 		try 
 		{
 			FileInputStream fis = new FileInputStream(f);

@@ -15,7 +15,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="src/main/resources/features/employeedetails.feature",
+		features="src/main/resources/features/Scenario-1.feature",
 		glue="stepdefinitions",
 		tags = "@TC_01",
 		monochrome=true,
